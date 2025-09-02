@@ -1,0 +1,16 @@
+# Cria um programa que peça ao utilizador para introduzir o seu nome completo.
+# O programa deve validar se o nome contém apenas letras e espaços, a primeira letra do nome deve ser sempre maiúscula e a seguir ao espaço também, usando os códigos ASCII de cada caractere.
+
+#Exemplo: Pedro Pereira 
+
+#Se o nome for válido, o programa deve exibir:
+# "Nome válido!"
+#Caso contrário, deve exibir:
+# "Nome inválido: contém caracteres não permitidos."
+
+#No caso de o programa encontrar um caractere invalido deve parar a execução.
+
+#Exemplos Inválidos:
+#Miguel PriMo
+#Luis AnseLmo
+#Guilherme ramos
