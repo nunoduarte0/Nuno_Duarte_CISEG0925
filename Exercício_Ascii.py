@@ -15,32 +15,54 @@
 #Luis AnseLmo
 #Guilherme ramos
 
-listname=[]
 
-i=0
-it=0
-
-name=input("Introduza o seu nome")
-
-listname.append(name)
-print(listname)
-
-
-
-while i<len(listname):
-    it=0
-    
-    while it<len(listname[i]):
-        
-      print(listname[i][it])
-      it+=1
-    i+=1
-    
-    
+name = input("Introduza o seu nome completo: ")
 
 for i in name:
-  char = ord(i)
-  if char >= 65 and char <= 90:
-        print("Maiscula encontrada" , char)
+  ver=ord(i)
+  
+  if not ((ver >= 65 and ver <= 90) or (ver >=97 and ver <=122) or ver == 32):
+    print("Nome inválido: contém caracteres não permitidos")
     
+    
+    
+for it in range (len(name)):
+  if it ==0:
+    if (ord(name[it]) >= 65 and ord(name[it]) <=90):
+      continue
+    
+    else:
+      print("Primeira letra tem de ser maiuscula.")
+      break
+    
+  elif ord(name[it]) == 32:
+    it=it +1
+       
+    if ord(name[it]) >= 65 and ord(name[it])  <=90:
+      continue
+      
+    else:
+      print("Algum nome após espaço não foi inserido com maiuscula")
+  
+  elif it==len(name)-1:
+    print("Nome válido")
+    
+      
+      
+      
+      
+  
+    
+    
+      
+    
+
+
+    
+    
+    
+
+
+
+
 
