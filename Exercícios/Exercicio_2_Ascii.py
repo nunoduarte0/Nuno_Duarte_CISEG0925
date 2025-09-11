@@ -41,17 +41,48 @@ do 33 ate 127
 
 '''
 
-key=input("Insira a chave: ")
 
-soma=0
 
-for i in range (len(key)):
-    soma+=(ord(key[i]))
-    print(soma)
+while True: 
+    chave=input("Insira a chave: ")
+    mensagem=input("Insira a mensagem")
     
-       
-    
-    
-    #if i >=65 and i <=90:
+    if len(chave)==0:
+        print("A chave não pode estar vazia!")
+        
+
+    else:    
+        
+        SomaChave=0
+        for i in chave:
+            SomaChave+=ord(i)
+                
+            print(i, "->" , ord(i))
+        print("SomaChave:" ,SomaChave)
+
+        listaCaracteres=[]
+        for c in mensagem:
+            listaCaracteres.append(chr(SomaChave + ord(c)))
+
+        print("Mensagem criptografada -> " ,listaCaracteres)
+
+
+        descriptografar=""
+
+# NÃO ESTÁ A PASSAR DAQUI
+        for d in listaCaracteres:
+            print("d" ,d)
+            dc= (ord(d) - SomaChave) 
+
+            descriptografar+=chr(dc)
+
+        print("Mensagem Inicial: " ,descriptografar)
+
+        exit()
+
+
+
+
+
         
         
