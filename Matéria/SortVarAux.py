@@ -31,40 +31,37 @@ while FlagTroca:
 
 '''
     
-    
-    
-listaNome=["Dario Quental", "Dario Almeida" , "Bruno Carvalho"]
-#index
-
-
+listaNome=["Dario Quental","Dario Almeida","Bruno Carvalho"]
+# index         0               1                 2
+#length 6
+ 
 i=0
-VauAux=""
 FlagTroca=True
 it=0
-
-while FlagTroca:
-    FlagTroca=False
-    i=0
-    while i<len(listaNome):
-
-        FlagTroca=False       
+controloTroca=-1
+il=1
+ 
+ 
+while il<len(listaNome):       # Loop controla as voltas a lista
+    i=0                # reposiçao do index da lista 1 dimensão ( Nome )
+    print("Oi")
+    print("IL - ",il)
+    while i< len(listaNome):  # Loop controla a posiçao do nome
+        print("index 1 pos - ",i)
         if i<=len(listaNome)-2:
-            it+=1
-            print(len(listaNome[i]), "   -  " ,len(listaNome[i+1]))
-            while it< len(listaNome[i]):
-                print("Antes do if i" , i , "it" , it)
-                if ord(listaNome[i][it]) > ord(listaNome[i+1][it]):
-                    print("troca i" , i , "it" , it)
-                    print(listaNome[i][it], "   -  "  ,listaNome[i+1][it])
-                    FlagTroca=True               
+            it=0  # reposiçao do index da lista 2 dimensão ( Letras )
+            controloTroca=-1
+            while it<len(listaNome[i]) and it< len(listaNome[i+1]): # Loop controla as letras no nome
+               
+                # print("Antes do if i    ", i  , "troca  it    ", it )
+                if ord(listaNome[i][it]) > ord(listaNome[i+1][it]) and  controloTroca != i :
+                    print("If que troca i", i ,"Depois da troca  it", it )
+                    print (listaNome[i][it] , "   -   " , listaNome[i+1][it] )
+                    controloTroca=i # controlar index da primeira dimençao ( quando acontece troca de nome ja nao é trocado nenhum nome)
                     listaNome.insert(i,listaNome[i+1])
                     print(listaNome)
                     listaNome.pop(i+2)
                     print(listaNome)
-                    break
-                it+=1
-        
+                it+=1                        
         i+=1
-    
-
-print(listaNome)
+    il+=1
